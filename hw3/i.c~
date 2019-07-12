@@ -1,0 +1,108 @@
+#include <stdio.h>
+#include <math.h>
+#define TRUE 1
+#define FALSE 0
+void instruction();
+void positive(int num);
+void menu();
+void property(int section,int num);	
+int faktoriyel(int number);
+void preferQuestions();
+int main()
+{
+	int num;
+	instruction();
+	printf("Please enter a positive integer: ");
+	scanf("%d",&num);
+	if(positive(num)){
+		printf("The entered number is positive\n");
+		preferQuestion();
+}
+	else{ printf("The entered number is not positive\n");
+		preferQuestion();
+		menu();
+		
+}
+}
+
+void instruction(){
+	int i;	
+	for(i=0; i<60; i+=1)
+		printf("*");
+	printf("\n*                   WELCOME !                              *");
+	printf("\n*	 This program checks whether the given number      *");
+	printf("\n*	is an odd, a factorial or a narcissistic number    *\n");
+	printf("*                                                          *\n");
+	for(i=0; i<60; i+=1)
+		printf("*");
+	printf("\n");
+
+}
+void positive(int num){
+	char yOrn;	
+	int section;
+	if(num<=0)
+		return FALSE;
+	else 
+		return TRUE;
+
+}
+void property(int section,int num){
+	char yOrn;
+	int count;
+	int i;
+	int narcis;
+	int digit1,digit2,digit3,digit4;
+
+	switch(section){
+	case 1: if(num%2==0)
+				printf("%d is not an odd number\n",num); 
+			else
+				 printf("%d is an odd number\n",num);		
+			preferQuestion()
+	case 2:		
+}				if(factoriyel(num))
+					printf("%d is a factorial number\n",num);
+				else 
+					printf("%d is not a factorial number\n",num); 	
+				
+			    
+	case 3:	while(num>0)
+}
+
+
+
+
+
+int faktoriyel(int number){
+			int count;			
+			count=1;
+			for(i=1; i<=num; i+=1)
+{
+				if(num%i==0)
+					count=count*i;			
+				
+				else if(num%i!=0)
+					break;	
+}				if(num==count)
+					return TRUE;
+				else 
+					return FALSE;
+}
+void preferQuestion(){
+	printf("Do you want to continue (y/n)? ");
+			 	scanf(" %c",&yOrn);
+
+			 	if(yOrn =='y')
+					positive(num);
+			 	else if(yOrn =='n')
+					printf("Good bye  !\n"); break;
+}
+void menu(){
+		printf("Which property would you like to check ?\n");
+		printf("1)Odd number\n");
+		printf("2)Factorial number\n");
+		printf("3)Narcissistic number\n");
+		printf("PLease enter the (1/2/3): "); 
+}
+				   

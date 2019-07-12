@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <string.h>
+int matcher(char *str,char *substr);
+int main()
+{
+	printf("%d\n",matcher("fenewfenewfenewfenwfenewfenew","fenew"));;
+	
+}
+int matcher(char *str,char *substr)
+{
+	int adet,i,j,n,len;
+	int a,k,count;
+	n = strlen(str);
+	len = strlen(substr);	
+	count = 0;
+	k = 0;
+	j = 0;
+	adet=0;	
+	a = len;
+	if(str==NULL || substr==NULL || n<len )
+	    return 0;	
+	for(i=0; i<n; i++)
+	{
+		k=i;
+		len=a;
+		while(len>=j)
+		{
+			if(len%2!=0 && str[i]==substr[j])
+			{
+				count++;
+				i+=2;
+				j+=2;
+				if(count==len/2+1)
+				{
+					adet ++;
+					count=0;
+				}			
+			}
+			
+			else if(len%2==0 && str[i]==substr[j])
+			{
+				count++;
+				i+=2;
+				j+=2;
+				if(count==len/2+1)
+				{
+					adet ++;
+					count=0;			
+				}
+			}
+			else
+				len=-1;
+			
+		}
+		count=0;
+		j=0;
+		i=k;
+		k++;	
+	}
+
+	return	adet;
+}
